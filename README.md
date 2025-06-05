@@ -3,6 +3,7 @@
 
 
 ## Integrantes 
+[David Chaparro](https://github.com/DavidChaparro10)
 
 
 ## Informe
