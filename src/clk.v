@@ -18,3 +18,6 @@ always @(posedge clk) begin
         if (counter == cont) begin
             counter <= 'd0;
             // clk2 <= ~ // Nota: ctrl+shft + u + 7E = 
+        end
+    end
+end
