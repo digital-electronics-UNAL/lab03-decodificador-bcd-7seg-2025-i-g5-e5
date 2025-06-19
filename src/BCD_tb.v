@@ -1,4 +1,6 @@
 always #5 clk2 = ~clk2;
+// falta la condición inicial
+clk2= 1'c0;
 module prueba;
 
 initial begin TEST CASE
