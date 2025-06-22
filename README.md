@@ -42,7 +42,9 @@ Hay FPGA´s que tienen 7 para cada uno. Pero en nuestro caso nunca van a estar p
 
 ## 4. Simulaciones 
 
+### Simulación testbench en GTKWave:
 
+![alt text](<Anexos/image copy 5.png>)
 ## 5. Implementación
 
 ### Selección de ánodo
