@@ -67,7 +67,19 @@ Podemos crear una señal interna con un **contador** cuando me cuenta hasta 1 la
 
 ![alt text](Anexos/contador.jpeg)
 
+### Nixie tube
 
+En la FPGA hay una tabla que dice "Nixie Tube". La primera columna son los segmentos que van de A hasta G. La segunda columna tenemos los bloques de 7 segmentos. Cada bloque se activa con un bit. En el caso de la FPGA que se uso en el laboratorío, los primeros bits van a ser los ánodos del bloque de más a la izquierda (Cómo escogí los primeros 4, se prendió el Led de más a la izquierda.)
+
+### Hallar el módulo
+
+El módulo es necesario para hallar el "residuo" de la división para así poder sacar unidades, decenas y centenas.
+En Verilog se usa el siguiente código:
+
+```
+    0: BCD <= num%10; algo=1; 
+    1: BCD <= (num- num % 10) / 10; algo=0;
+```
 
 ## Conclusiones
 
