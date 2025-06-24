@@ -5,7 +5,7 @@ module BCDtoSSeg (
     output [3:0] an
   );
   
-  assign an = s;
+  assign an = BCD;
 
   always @ ( * ) begin
     case (BCD)
