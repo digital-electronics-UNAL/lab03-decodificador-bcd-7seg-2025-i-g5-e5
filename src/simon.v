@@ -8,28 +8,28 @@
 
 `default_nettype none
 
-module wokwi (
-    input  CLK,
-    input  RST,
-    input  BTN0,
-    input  BTN1,
-    input  BTN2,
-    input  BTN3,
-    output LED0,
-    output LED1,
-    output LED2,
-    output LED3,
-    output SND
+module SimonTop (
+    input wire CLOCK_50,
+    input wire [3:0] KEY,
+    output wire [9:0] LEDR,
+    output wire BUZZER
 );
 
-  simon simon1 (
-      .clk   (CLK),
-      .rst   (RST),
-      .ticks_per_milli (50),
-      .btn   ({BTN3, BTN2, BTN1, BTN0}),
-      .led   ({LED3, LED2, LED1, LED0}),
-      .sound (SND)
+  wire [3:0] leds;
+  wire sound;
+
+  simon simon_game (
+      .clk   (CLOCK_50),
+      .rst   (~KEY[0]),                // Reset con KEY[0], activo bajo
+      .ticks_per_milli (16'd50000),   // 50 MHz -> 50000 ticks por milisegundo
+      .btn   (~KEY[3:0]),              // Botones activos bajos
+      .led   (leds),
+      .sound (sound)
   );
+
+  assign LEDR[3:0] = leds;
+  assign LEDR[9:4] = 6'b000000; // LEDs extra apagados
+  assign BUZZER = sound;
 
 endmodule
 

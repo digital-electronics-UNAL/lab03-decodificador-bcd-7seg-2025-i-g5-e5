@@ -1,13 +1,18 @@
-module clock gen (clk, reset, fdiv);
+module clock_gen (clk, reset, fdiv);
 
 input clk;
 input reset;
-output reg fdiv;
+output reg clk2;
 
-parameter cont = 25000000;
+parameter cont = 800000;
 parameter tam = $clog2(cont);
 
 reg [tam:0] counter;
+
+initial begin
+    clk2 = 1'b0;
+    counter = 'd0;
+end
 
 
 always @(posedge clk) begin
@@ -17,7 +22,11 @@ always @(posedge clk) begin
     end else begin
         if (counter == cont) begin
             counter <= 'd0;
-            // clk2 <= ~ // Nota: ctrl+shft + u + 7E = 
+            clk2 <= ~clk2;
+        end else begin
+            counter <= counter + 1;
         end
     end
 end
+
+endmodule
