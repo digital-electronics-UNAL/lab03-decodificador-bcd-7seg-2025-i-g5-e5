@@ -22,7 +22,7 @@ module top_sumador_visual (
     .Cout(Cout)      
   );
 
-  divisor div (
+  clock_gen div (
     .clk(clk),
     .clk2(clk2)
   );

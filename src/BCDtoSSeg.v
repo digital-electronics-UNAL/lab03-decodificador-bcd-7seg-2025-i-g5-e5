@@ -1,9 +1,10 @@
 module BCDtoSSeg (
-    input [3:0] BCD, 
-    input [3:0] s,
-    output reg [0:6] SSeg, 
-    output [3:0] an
-  );
+  input [3:0] BCD,
+  input [3:0] s,
+  output reg [0:6] SSeg,
+  output [3:0] an
+);
+
   
   assign an = BCD;
 

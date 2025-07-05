@@ -1,16 +1,12 @@
-**** module/scope: tickgen
-     Flip-Flops   : 17
-     Logic Gates  : 164
-     ADDER[16]: 1 units
-     EQUALITY[32]: 1 units
-     MUX[2]: 34 slices
+**** module/scope: BCDtoSSeg
+     Flip-Flops   : 0
+     Logic Gates  : 0
+     LPM[5]: 1 unaccounted
      LOG[13]: 1 unaccounted
      LOG[14]: 1 unaccounted
 **** TOTALS
-     Flip-Flops   : 17
-     Logic Gates  : 164
-     ADDER[16]: 1 units
-     EQUALITY[32]: 1 units
-     MUX[2]: 34 slices
+     Flip-Flops   : 0
+     Logic Gates  : 0
+     LPM[5]: 1 unaccounted
      LOG[13]: 1 unaccounted
      LOG[14]: 1 unaccounted

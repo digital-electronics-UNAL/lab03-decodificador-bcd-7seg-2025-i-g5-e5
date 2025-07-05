@@ -21,10 +21,10 @@ Indice:
 
 ### 2. Descripción
 
-El BCD significa "Binary COoe Decimal". El cual es un codificador que convierte un número binario en decimal. Cuando nos adentramos a la parte circuital tenemos 2 tipos de BCD´s: De ánodo común y de cátodo común. Eso depende de la FPGA:
+El BCD significa "Binary Code Decimal". El cual es un codificador que convierte un número binario en decimal. Cuando nos adentramos a la parte circuital tenemos 2 tipos de BCD´s: De ánodo común y de cátodo común. Eso depende de la FPGA:
 ![alt text](<Anexos/image copy 2.png>)
 
- En el caso de la Cyclone IV que usamos en clase, es de ándodo común. Esto significa que están conectados ya sea a tierra o a VCC. En el caso de nuestra FPGA el led prende cuando está a un nivel bajo (para encender un led se debe dar un cero lógico).
+ En el caso de la Cyclone IV que usamos en clase, es de ánodo común. Esto significa que están conectados ya sea a tierra o a VCC. En el caso de nuestra FPGA el led prende cuando está a un nivel bajo (para encender un led se debe dar un cero lógico).
 
 En la primera parte se implementó un 7 segmentos que me representa 1 bit. La segunda parte es más compleja, ya que queremos ampliar los bits.
 ### 3. Diagramas
@@ -34,7 +34,7 @@ Primero se debe elegir el bloque funcional del diseño:
 
 ![alt text](Anexos/image.png)
 
-Puedo seleccionar el numero en binario a decimal (similar a un multiplexor), eso es problemático porque debo activar uno para mostrar las unidades, luego las decenas y luego las centenas. Entonces ahi es donde entra la **logica secuencial** Si no estuviera multiplexado la lógica seria siendo combinacional. En esta FPGA resulta que los 7 segmentos están interconectados de la siguiente manera:
+Puedo seleccionar el numero en binario a decimal (similar a un multiplexor), eso es problemático porque debo activar uno para mostrar las unidades, luego las decenas y luego las centenas. Entonces ahi es donde entra la **logica secuencial**. Si no estuviera multiplexado la lógica seria siendo combinacional. En esta FPGA resulta que los 7 segmentos están interconectados de la siguiente manera:
 
 ![alt text](<Anexos/image copy 4.png>)
 
@@ -42,9 +42,16 @@ Hay FPGA´s que tienen 7 para cada uno. Pero en nuestro caso nunca van a estar p
 
 ## 4. Simulaciones 
 
-### Simulación testbench en GTKWave:
+### Simulación del BCD en GTKWave:
 
 ![alt text](<Anexos/image copy 5.png>)
+
+### Simulación de la "caja" en GTKWave:
+![alt text](<Anexos/Pasted image 20250626203421.png>)
+
+- Lo que hace es convertir un número binario de 6 bits ( num [5:0] ) en dos dígitos. (unidades y decenas).
+- Como está multiplexado clk2 lo que hace es alternar cuál dígito se muestra.
+
 ## 5. Implementación
 
 ### Selección de ánodo
@@ -52,9 +59,9 @@ Para que el ánodo no esté fijado, se toma como **input** o entrada.
 
 
 ### Selector y Carry Out
-El signo se puede poner como un caso especial. Como idea se puede sacar del selector. CUando el selector este en uno mide el quinto bit. Si el carry out es cero estoy en un resultado negativo.
+El signo se puede poner como un caso especial. Como idea se puede sacar del selector. Cuando el selector este en uno mide el quinto bit. Si el carry out es cero estoy en un resultado negativo.
 
-Resulta que en modo negativo tengo que hacer comlemento a 1 y complemento a dos en la salida. Si no no me va a entender. Esto se puede hacer con una compuerta AND. EJP entra el selector y el negado del carry out. Entonces:
+Resulta que en modo negativo tengo que hacer comlemento a 1 y complemento a dos en la salida. Si no no me va a entender. Esto se puede hacer con una compuerta AND. Por ejemplo, si entra el selector y el negado del carry out. Entonces:
 SI el selector está en uno y el carry out es cero, con la compuerta AND me da 1.
 	Por que es selector?
 		porque puedo tener el carry out y la suma. Solo el carry out no me dice cuando tengo ahacer el complemento a 1 y complemento a 2 por si solo y solo el selector no me dice cuando tengo que hacer el complemento a uno y complemento a dos.
@@ -86,5 +93,8 @@ En Verilog se usa el siguiente código:
 ## Conclusiones
 
 - La multiplicación consume muchos recursos. Si implementamos, por ejemplo, una red neuronal (la cual tiene muchas multiplicaciones), la multiplicación va a ser imposible.
+
+- El uso de lógica secuencial y multiplexación permite representar múltiples dígitos en un mismo conjunto de líneas físicas, optimizando recursos en la FPGA.
+
 
 

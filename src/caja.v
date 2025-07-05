@@ -1,9 +1,11 @@
 module caja (
-    input [5:0] num,
-    input clk2,
-    output [0:6] SSeg,
-    output [3:0] an
+  input [5:0] num,
+  input clk2,
+  input [3:0] s,
+  output [0:6] SSeg,
+  output [3:0] an
 );
+
 
   wire [3:0] BCD;
 
@@ -18,7 +20,7 @@ module caja (
   // Instancia del decodificador BCD a 7 segmentos
   BCDtoSSeg sumar (
     .BCD(BCD),
-    .sel(sel),          // señal para multiplexación externa
+    .s(s),          // señal para multiplexación externa
     .SSeg(SSeg),
     .an(an)
   );
