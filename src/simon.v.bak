@@ -1,8 +1,16 @@
+// SPDX-FileCopyrightText: © 2022 Uri Shaked <uri@wokwi.com>
+// SPDX-License-Identifier: MIT
+
+/*
+ * Simon Says game in Verilog. Wokwi Simulation project:
+ * https://wokwi.com/projects/352319274216569857
+ */
+
 `default_nettype none
 
 module SimonTop (
     input wire CLOCK_50,
-    input wire [4:0] KEY,
+    input wire [3:0] KEY,
     output wire [9:0] LEDR,
     output wire BUZZER
 );
@@ -12,7 +20,7 @@ module SimonTop (
 
   simon simon_game (
       .clk   (CLOCK_50),
-      .rst   (~KEY[4]),                // Reset con KEY[0], activo bajo
+      .rst   (~KEY[0]),                // Reset con KEY[0], activo bajo
       .ticks_per_milli (16'd50000),   // 50 MHz -> 50000 ticks por milisegundo
       .btn   (~KEY[3:0]),              // Botones activos bajos
       .led   (leds),

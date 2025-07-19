@@ -1,12 +1,14 @@
-**** module/scope: BCDtoSSeg
-     Flip-Flops   : 0
-     Logic Gates  : 0
-     LPM[5]: 1 unaccounted
+**** module/scope: light
+     Flip-Flops   : 1
+     Logic Gates  : 69
+     EQUALITY[32]: 1 units
+     MUX[2]: 2 slices
      LOG[13]: 1 unaccounted
      LOG[14]: 1 unaccounted
 **** TOTALS
-     Flip-Flops   : 0
-     Logic Gates  : 0
-     LPM[5]: 1 unaccounted
+     Flip-Flops   : 1
+     Logic Gates  : 69
+     EQUALITY[32]: 1 units
+     MUX[2]: 2 slices
      LOG[13]: 1 unaccounted
      LOG[14]: 1 unaccounted
