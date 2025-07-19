@@ -49,7 +49,8 @@ El sistema se divide en tres módulos principales:
   ![alt text](image-3.png)
 
   En cuanto a la máquina de estados, fue la siguiente: 
-  ![x](image-4.png)
+
+  ![alt text](image-4.png)
 
 - **play**: Generador de señal cuadrada para producir sonidos a partir de una frecuencia dada. Se usa para emitir tonos correspondientes a cada botón y efectos de éxito o fallo.
 
