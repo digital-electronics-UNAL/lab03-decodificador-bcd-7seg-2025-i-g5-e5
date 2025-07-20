@@ -62,7 +62,9 @@ Se realizaron las siguientes pruebas:
 
 - [Testbench](../src/simon_tb.v) en GTKWave
 - Verificación de reproducción de secuencia de LEDs y sonidos:
+
 ![alt text](image-5.png)
+
 - Confirmación de que los botones activan los LEDs y sonidos correctos.
 
 ![alt text](image-7.png)
