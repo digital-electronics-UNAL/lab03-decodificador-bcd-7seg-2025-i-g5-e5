@@ -75,7 +75,7 @@ Se realizaron las siguientes pruebas:
 
 - Eliminación del reinicio inesperado al usar el botón KEY[0], reasignándolo como botón de juego (LED 0).
 
-Pruebas adicionales se realizaron en FPGA (Cyclone IV), [verificando el comportamiento físico de los botones, los tiempos y el buzzer](/home/david/github-classroom/digital-electronics-UNAL/lab03-decodificador-bcd-7seg-2025-i-g5-e5/Proyecto/video1.mp4).
+Pruebas adicionales se realizaron en FPGA (Cyclone IV), verificando el comportamiento físico de los botones, los tiempos y el buzzer ([video1](Proyecto)).
 
 ## 4. Uso de Inteligencia Artificial
 
