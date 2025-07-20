@@ -64,9 +64,13 @@ Se realizaron las siguientes pruebas:
 - Verificación de reproducción de secuencia de LEDs y sonidos:
 ![alt text](image-5.png)
 - Confirmación de que los botones activan los LEDs y sonidos correctos.
+
 ![alt text](image-7.png)
+
 - Comprobación del reinicio del juego desde el estado de Game Over.
+
 ![alt text](image-6.png)
+
 - Eliminación del reinicio inesperado al usar el botón KEY[0], reasignándolo como botón de juego (LED 0).
 
 Pruebas adicionales se realizaron en FPGA (Cyclone IV), [verificando el comportamiento físico de los botones, los tiempos y el buzzer](Proyecto/video1.mp4).
